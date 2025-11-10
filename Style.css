@@ -11,9 +11,9 @@ body {
 
 
 body {
-
     font-family: VodafoneRg;
     /* Optional: Set your preferred font */
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -37,10 +37,12 @@ main {
     height: 62rem;
     background-image: url('Game  Container Background.png');
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    max-width: 95%;
 
 
 }
@@ -104,17 +106,13 @@ main {
 }
 
 span label {
-
-    display: block;
+    display: flex;
     width: 30%;
     height: 50%;
     border: 4px solid #FFF6B2;
-    /* Set border thickness and color */
     border-radius: 15px;
-    /* Adjust the border radius to your preference */
     cursor: pointer;
-    transition: border-color 0.3s;
-    /* Add transition for smoother hover effect */
+    transition: all 0.3s;
     font-weight: 800;
     color: rgb(225, 225, 225);
     font-size: 0.75rem;
@@ -124,7 +122,7 @@ span label {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-
+    word-wrap: break-word;
 }
 
 span label:hover {
@@ -280,72 +278,319 @@ input[type="radio"]:checked+label {
     /* Change text color when checked */
 }
 
-@media(min-width : 300px) and (max-width : 350px) {
+/* Small phones (up to 360px) */
+@media(max-width: 360px) {
     .game-quiz-container {
-        width: 90%;
-        height: 80vh;
+        width: 95%;
+        height: auto;
+        min-height: 85vh;
+        padding: 1rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        flex-wrap: wrap;
     }
 
     .game-details-container h1 {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .game-question-container {
-        height: 6rem;
+        height: auto;
+        min-height: 8rem;
+        padding: 1rem;
+        margin-top: -3rem;
     }
 
     .game-question-container h1 {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        max-width: 85%;
+        line-height: 1.3;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -8rem;
+        gap: 0.5rem;
     }
 
     .game-options-container span {
         width: 90%;
-        height: 2.5rem;
+        height: auto;
+        margin-top: 0.5rem;
     }
 
-    .game-options-container span label {
-        font-size: 0.8rem;
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 2.5rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+        margin-left: 0;
+        border: 3px solid #FFF6B2;
+    }
+
+    .next-button-container {
+        width: 90%;
+        margin-top: -8rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.5rem;
+        font-size: 0.9rem;
+        margin-top: 0;
+        margin-left: 0;
+        border: 3px solid #FFF6B2;
     }
 
     .modal-content-container {
         width: 90%;
-        height: 25rem;
+        height: auto;
+        min-height: 18rem;
+        padding: 1rem;
+        margin-left: 0;
     }
 
     .modal-content-container h1 {
-        font-size: 1.2rem;
-    }
-}
-
-@media(min-width : 350px) and (max-width : 700px) {
-    .game-quiz-container {
-        width: 90%;
-        height: 80vh;
-    }
-
-    .game-details-container h1 {
         font-size: 1rem;
     }
 
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .grade-details p {
+        font-size: 0.9rem;
+    }
+
+    .modal-button-container button {
+        width: 8rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Medium phones (361px - 480px) */
+@media(min-width: 361px) and (max-width: 480px) {
+    .game-quiz-container {
+        width: 95%;
+        height: auto;
+        min-height: 85vh;
+        padding: 1rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 0.9rem;
+    }
+
     .game-question-container {
-        height: 8rem;
+        height: auto;
+        min-height: 10rem;
+        padding: 1.5rem;
+        margin-top: -3rem;
     }
 
     .game-question-container h1 {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        max-width: 85%;
+        line-height: 1.4;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -8rem;
+        gap: 0.5rem;
     }
 
     .game-options-container span {
         width: 90%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 3rem;
+        font-size: 0.8rem;
+        padding: 0.6rem;
+        margin-left: 0;
+        border: 3px solid #FFF6B2;
+    }
+
+    .next-button-container {
+        width: 90%;
+        margin-top: -8rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 2.8rem;
+        font-size: 1rem;
+        margin-top: 0;
+        margin-left: 0;
     }
 
     .modal-content-container {
         width: 90%;
-        height: 25rem;
+        height: auto;
+        min-height: 20rem;
+        padding: 1.5rem;
+        margin-left: 0;
     }
 
     .modal-content-container h1 {
+        font-size: 1.1rem;
+    }
+
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-button-container button {
+        width: 9rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Large phones (481px - 768px) */
+@media(min-width: 481px) and (max-width: 768px) {
+    .game-quiz-container {
+        width: 90%;
+        height: auto;
+        min-height: 80vh;
+        padding: 1.5rem 0;
+    }
+
+    .game-details-container {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .game-details-container h1 {
+        font-size: 1.1rem;
+    }
+
+    .game-question-container {
+        height: auto;
+        min-height: 12rem;
+        padding: 2rem;
+        margin-top: -3rem;
+    }
+
+    .game-question-container h1 {
         font-size: 1.2rem;
+        max-width: 80%;
+        line-height: 1.5;
+    }
+
+    .game-options-container {
+        width: 100%;
+        height: auto;
+        margin-top: -6rem;
+        gap: 0.8rem;
+    }
+
+    .game-options-container span {
+        width: 85%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
+    span label {
+        width: 100%;
+        height: auto;
+        min-height: 3.5rem;
+        font-size: 0.9rem;
+        padding: 0.8rem;
+        margin-left: 0;
+    }
+
+    .next-button-container {
+        width: 85%;
+        margin-top: -6rem;
+    }
+
+    .next-button-container button {
+        width: 100%;
+        height: 3rem;
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .modal-content-container {
+        width: 85%;
+        height: auto;
+        min-height: 22rem;
+        padding: 2rem;
+        margin-left: 0;
+    }
+
+    .modal-content-container h1 {
+        font-size: 1.3rem;
+    }
+
+    .grade-details {
+        width: 100%;
+        height: auto;
+    }
+
+    .grade-details p {
+        font-size: 1rem;
+    }
+
+    .modal-button-container button {
+        width: 10rem;
+        height: 2.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media(min-width: 769px) and (max-width: 1024px) {
+    .game-quiz-container {
+        width: 80%;
+        max-width: 600px;
+    }
+
+    .game-details-container h1 {
+        font-size: 1.2rem;
+    }
+
+    .game-question-container h1 {
+        font-size: 1.3rem;
+    }
+
+    span label {
+        width: 45%;
+        margin-left: 0;
+        margin: 0 auto;
+    }
+
+    .next-button-container button {
+        margin-left: 0;
+    }
+
+    .modal-content-container {
+        width: 70%;
+        margin-left: 0;
     }
 }
 
